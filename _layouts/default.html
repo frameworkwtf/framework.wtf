@@ -27,7 +27,6 @@
           </div>
 
           <nav>
-            <a href="{{ site.baseurl }}/">WTF</a>
             {% assign pages = site.pages | sort: 'order' %}
             {% for page in pages %}
             {% if page.title and page.title != "404 - Page not found" %}
