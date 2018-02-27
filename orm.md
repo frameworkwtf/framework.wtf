@@ -6,13 +6,25 @@ order: 4
 
 ORM, based on [medoo.in](http://medoo.in)
 
-### Install
+<!-- vim-markdown-toc GFM -->
+
+* [Install](#install)
+* [Configuration](#configuration)
+* [Usage](#usage)
+    - [Get entity](#get-entity)
+    - [Entity](#entity)
+    - [Migrations and Seeds](#migrations-and-seeds)
+* [Documentation](#documentation)
+
+<!-- vim-markdown-toc -->
+
+## Install
 
 ```bash
 composer require wtf/orm
 ```
 
-### Configuration
+## Configuration
 
 Create file `medoo.php` into your config dir with the following content:
 

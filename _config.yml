@@ -68,7 +68,13 @@ kramdown:
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     # Use existing pygments syntax highlighting css
-    css_class: 'highlight'
+    css_class: 'codehilite'
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: [html, head, body]
 
 # Set the Sass partials directory, as we're using @imports
 sass:

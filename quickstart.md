@@ -4,7 +4,21 @@ title: Quick Start
 order: 2
 ---
 
-## Simple App
+<!-- vim-markdown-toc GFM -->
+
++ [Simple App](#simple-app)
+    * [How to use magic?](#how-to-use-magic)
++ [Advanced usage](#advanced-usage)
+    * [Create new project with skeleton](#create-new-project-with-skeleton)
+    * [Configure routes](#configure-routes)
+    * [Install addtional packages](#install-addtional-packages)
+        - [HTML](#html)
+        - [Find out more](#find-out-more)
+    * [Docker](#docker)
+
+<!-- vim-markdown-toc -->
+
+# Simple App
 
 Slim framework examples
 

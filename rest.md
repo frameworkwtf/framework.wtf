@@ -3,6 +3,15 @@ layout: page
 title: REST
 order: 6
 ---
+
+<!-- vim-markdown-toc GFM -->
+
+- [Install](#install)
+- [Configure your app](#configure-your-app)
+- [Add new provider and middleware](#add-new-provider-and-middleware)
+
+<!-- vim-markdown-toc -->
+
 ### Install
 
 ```php

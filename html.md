@@ -6,13 +6,22 @@ order: 5
 
 This package contains Twig template engine with flash messages and a useful Session class for WTF framework
 
-### Install
+<!-- vim-markdown-toc GFM -->
+
+* [Install](#install)
+* [Configure your app](#configure-your-app)
+    - [Add new provider and middleware](#add-new-provider-and-middleware)
+* [Documentation](#documentation)
+
+<!-- vim-markdown-toc -->
+
+## Install
 
 ```php
 composer require wtf/html
 ```
 
-### Configure your app
+## Configure your app
 
 Create config file `html.php`:
 

@@ -3,6 +3,15 @@ layout: page
 title: Docker
 order: 3
 ---
+
+<!-- vim-markdown-toc GFM -->
+
+- [How to use](#how-to-use)
+- [Configuration (ENV vars)](#configuration-env-vars)
+- [Integrated tools](#integrated-tools)
+
+<!-- vim-markdown-toc -->
+
 ### How to use
 
 Create `Dockerfile` in your poject root with the following content:
