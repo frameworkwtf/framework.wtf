@@ -8,7 +8,7 @@ layout: compress
             {% if page.title and page.url != '/' %}{{ page.title }} – {% endif %}
             {{ site.name }} – {{ site.description }}
         </title>
-
+        <link rel="icon" type="image/png" href="{{ site.avatar.min }}" />
         {% include meta.html %}
 
         <!--[if lt IE 9]>
