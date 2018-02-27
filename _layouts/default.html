@@ -3,59 +3,64 @@ layout: compress
 ---
 <!DOCTYPE html>
 <html>
-  <head>
-      <title>
-          {% if page.title and page.url != '/' %}{{ page.title }} – {% endif %}
-          {{ site.name }} – {{ site.description }}
-      </title>
+    <head>
+        <title>
+            {% if page.title and page.url != '/' %}{{ page.title }} – {% endif %}
+            {{ site.name }} – {{ site.description }}
+        </title>
 
-    {% include meta.html %}
+        {% include meta.html %}
 
-    <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+        <!--[if lt IE 9]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
 
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+        <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
 
-    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
-  </head>
+        <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+    </head>
 
-  <body>
-    <div class="wrapper-masthead">
-      <div class="container">
-        <header class="masthead clearfix">
-          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar.min }}" /></a>
+    <body>
+        <div class="wrapper-masthead">
+            <div class="container">
+                <header class="masthead clearfix">
+                    <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar.min }}" /></a>
 
-          <div class="site-info">
-            <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-            <p class="site-description">{{ site.description }}</p>
-          </div>
+                    <div class="site-info">
+                        <h1 class="site-name">
+                            <a href="{{ site.baseurl }}/">{{ site.name }}</a>
+                        <a class="github-button" href="https://github.com/frameworkwtf/skeleton" data-show-count="true" aria-label="Star WTF Framework on GitHub">Star</a>
+                        </h1>
+                        <p class="site-description">{{ site.description }}</p>
+                    </div>
 
-          <nav>
-            {% assign pages = site.pages | sort: 'order' %}
-            {% for page in pages %}
-            {% if page.title and page.title != "404 - Page not found" %}
-            <a href="{{ page.url }}">{{ page.title }}</a>
-            {% endif %}
-            {% endfor %}
-          </nav>
-        </header>
-      </div>
-    </div>
+                    <nav>
+                        {% assign pages = site.pages | sort: 'order' %}
+                        {% for page in pages %}
+                        {% if page.title and page.title != "404 - Page not found" %}
+                        <a href="{{ page.url }}">{{ page.title }}</a>
+                        {% endif %}
+                        {% endfor %}
+                    </nav>
+                </header>
+            </div>
+        </div>
 
-    <div id="main" role="main" class="container">
-      {{ content }}
-    </div>
+        <div id="main" role="main" class="container">
+            {{ content }}
+        </div>
 
-    <div class="wrapper-footer">
-      <div class="container">
-        <footer class="footer">
-          {% include svg-icons.html %}
-        </footer>
-      </div>
-    </div>
+        <span style="float: right">This site is open source. <a href="{{ site.repository_url }}/edit/gh-pages/{{ page.path }}">Improve this page</a></span>
+        <div class="wrapper-footer">
+            <div class="container">
+                <footer class="footer">
+                    {% include svg-icons.html %}
+                </footer>
+            </div>
+        </div>
 
-    {% include analytics.html %}
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
-  </body>
+        <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+        {% include analytics.html %}
+    </body>
 </html>

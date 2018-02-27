@@ -14,6 +14,7 @@ avatar:
   max: /images/logo.png
 
 author: Nikita Chernyi and Contributors
+repository_url: https://github.com/frameworkwtf/framework.wtf
 
 #
 # Flags below are optional
