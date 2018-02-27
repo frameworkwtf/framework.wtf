@@ -14,7 +14,7 @@ composer require wtf/orm
 
 ### Configuration
 
-Create file `medoo.php` into your config dir with following contents:
+Create file `medoo.php` into your config dir with the following content:
 
 ```php
 <?php
@@ -38,7 +38,7 @@ return [
 ];
 ```
 
-And file `phinx.php` into your config dir with following contents:
+And file `phinx.php` into your config dir with the following content:
 
 ```php
 <?php
@@ -102,7 +102,7 @@ $books = $this->entity('book')->loadAll(['author_id' => $id]);
 
 This library provides you `\TiSuit\ORM\Entity` abstract class, which must be used as parent class of your project entities.
 
-Each entity has following abstract methods:
+Each entity has the following abstract methods:
 
 **public function getTable(): string**
 
@@ -112,7 +112,7 @@ This function MUST return entity table name in database
 
 Return array of [respect/validation](https://github.com/Respect/Validation) rules.
 
-> NOTE: If you don't need validations, just return empty array
+> NOTE: If you don't need validations, just return an empty array
 
 Structure:
 
@@ -141,7 +141,7 @@ return [
 
 Return array of relations with other entities
 
-> NOTE: If you don't need relations, just return empty array
+> NOTE: If you don't need relations, just return an empty array
 
 Structure:
 
@@ -180,7 +180,7 @@ return [
 ];
 ```
 
-This example can be called like `$blogPostEntity->getAuthor()`
+This example can be called `$blogPostEntity->getAuthor()`
 
 ### Migrations and Seeds
 
