@@ -15,7 +15,7 @@ layout: compress
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
 
-        <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+        <!--<link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />-->
 
         <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
     </head>
@@ -29,7 +29,7 @@ layout: compress
                     <div class="site-info">
                         <h1 class="site-name">
                             <a href="{{ site.baseurl }}/">{{ site.name }}</a>
-                        <a class="github-button" href="https://github.com/frameworkwtf/skeleton" data-show-count="true" aria-label="Star WTF Framework on GitHub">Star</a>
+                            <a class="github-button" href="https://github.com/{{ site.github.account }}/{{ site.github.repository.star }}" data-show-count="true" aria-label="Star {{ site.name }} on GitHub">Star</a>
                         </h1>
                         <p class="site-description">{{ site.description }}</p>
                     </div>
@@ -50,7 +50,7 @@ layout: compress
             {{ content }}
         </div>
 
-        <span style="float: right">This site is open source. <a href="{{ site.repository_url }}/edit/gh-pages/{{ page.path }}">Improve this page</a></span>
+        <span style="float: right">This site is open source. <a href="https://github.com/{{ site.github.account }}/{{ site.github.repository.site }}/edit/gh-pages/{{ page.path }}">Improve this page</a></span>
         <div class="wrapper-footer">
             <div class="container">
                 <footer class="footer">
