@@ -83,13 +83,13 @@ composer create-project wtf/skeleton
 
 [Documentation](https://www.slimframework.com/docs/objects/router.html#how-to-create-routes)
 
-By default, route groups configured in `app/config/routes/` dir. Each file is separate route group.
+By default, route groups configured in `app/config/routes/` dir. Each file is a separate route group.
 
-Example: if you want to create admin panel for your site, just place file `app/config/routes/admin.php` and add routes in it - all defined routes will have prefix `http://your.site/admin`
+Example: if you want to create admin panel for your site, just place file `app/config/routes/admin.php` and add routes in it - all defined routes will have the prefix `http://your.site/admin`
 
 ## Install addtional packages
 
-By default, skeleton has only Core module installed, if you want more - feel free to add any library you need, but WTF has some pre-configured "bundles", check them out on [GitHub](https://github.com/frameworkwtf)
+By default, the skeleton has only Core module installed, if you want more - feel free to add any library you need, but WTF has some pre-configured "bundles", check them out on [GitHub](https://github.com/frameworkwtf)
 
 ### HTML
 
