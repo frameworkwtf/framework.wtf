@@ -35,10 +35,6 @@ return [
     'entity' => 'user', // user entity
     'storage' => \Wtf\Auth\Storage\Session::class, // can be Session, Cookie, JWT
     'repository' => \Wtf\Auth\Repository\User::class, // default user repository
-    'password' => [
-        'algo' => PASSWORD_DEFAULT,
-        'options' => [],
-    ],
 ];
 ```
 
