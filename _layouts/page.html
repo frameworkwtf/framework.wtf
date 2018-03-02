@@ -4,7 +4,11 @@ layout: default
 
 <article class="page">
 
-  <h1>{{ page.title }}</h1>
+  <h1>{{ page.title }}
+      {% if page.repo %}
+        <a class="source-link" href="https://github.com/{{ site.github.account }}/{{ page.repo }}">(source)</a>
+      {% endif %}
+  </h1>
 
   <div class="entry">
     {{ content }}

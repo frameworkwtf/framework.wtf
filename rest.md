@@ -2,6 +2,7 @@
 layout: page
 title: REST
 order: 6
+repo: rest
 ---
 
 <!-- vim-markdown-toc GFM -->

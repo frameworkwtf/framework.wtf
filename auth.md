@@ -2,6 +2,7 @@
 layout: page
 title: Auth
 order: 7
+repo: auth
 ---
 
 Authorization module that supports multiple auth methods (storages)
