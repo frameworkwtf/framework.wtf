@@ -166,6 +166,7 @@ return [
         'type' => 'has_one', //default, other options: has_many
         'key' => 'current_entity_key', //optional, default for has_one: <current_entity>_id, for has_many: id
         'foreign_key' => 'another_entity_key', //optional, default for has_one: id, for has_many: '<current_entity>_id'
+        'assoc' => true, //optional, load assoc data arrays instead of objects for has_many type. Default: false
     ],
 ];
 ```
