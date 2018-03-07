@@ -78,3 +78,11 @@ public function isLoggedIn(): bool
  */
 public function getUser(): ?Root
 ```
+
+```php
+/**
+ * Logout current user
+ * @return void
+ */
+public function logout(): void
+```
