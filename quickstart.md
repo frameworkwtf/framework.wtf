@@ -133,7 +133,7 @@ return [
 
 ### Find out more
 
-on [GitHub](https://github.com/frameworkwtf)
+on [GitHub](https://github.com/search?utf8=✓&q=topic:wtf-module)
 
 ## Docker
 
