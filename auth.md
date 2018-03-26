@@ -13,13 +13,21 @@ Authorization module that supports multiple auth methods (storages)
     - [Configure your app](#configure-your-app)
     - [Add new provider and middleware](#add-new-provider-and-middleware)
 * [Usage](#usage)
+    - [Provided methods](#provided-methods)
+    - [Examples](#examples)
 
 <!-- vim-markdown-toc -->
 
 ## Install
 
-```php
+```bash
 composer require wtf/auth
+# for JWT
+composer require wtf/rest
+# for Cookie
+composer require dflydev/fig-cookies
+
+# for Session you should install PHP session module
 ```
 
 ### Configure your app
@@ -44,6 +52,9 @@ return [
 
 
 ## Usage
+
+
+### Provided methods
 
 Each auth type uses following methods:
 
@@ -85,4 +96,29 @@ public function getUser(): ?Root
  * @return void
  */
 public function logout(): void
+```
+
+### Examples
+
+`$this->auth` available from any child of `\Wtf\Root` class
+
+**Login**:
+
+```php
+$this->auth->login('you@email.com', 'password');
+```
+
+**Get user**:
+
+```php
+//without login user will be null, so let's login first
+if(!$this->auth->isLoggedIn()) {
+    $this->auth->login('you@email.com', 'password');
+}
+$this->auth->getUser();
+```
+
+**Logout**;
+```php
+$this->auth->logout();
 ```

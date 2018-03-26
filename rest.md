@@ -7,13 +7,15 @@ repo: rest
 
 <!-- vim-markdown-toc GFM -->
 
-- [Install](#install)
-- [Configure your app](#configure-your-app)
-- [Add new provider and middleware](#add-new-provider-and-middleware)
+* [Install](#install)
+    - [Configure your app](#configure-your-app)
+    - [Add new provider and middleware](#add-new-provider-and-middleware)
 
 <!-- vim-markdown-toc -->
 
-### Install
+Simple wrapper around JWT middleware for seamless integration with WTF.
+
+## Install
 
 ```php
 composer require wtf/rest
