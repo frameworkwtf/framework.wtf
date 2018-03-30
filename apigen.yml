@@ -1,0 +1,5 @@
+parameters:
+    title: "WTF Framework API"
+    visibilityLevels: [public, protected, private]
+    annotationGroups: [todo, deprecated]
+    baseUrl: https://framework.wtf/api

@@ -1,0 +1,2 @@
+#!/bin/sh
+apigen generate --destination=./api ../core/src/ ../auth/src/ ../middleware-filters/src/ ../orm/src/ ../rest/src/ ../html/src/Provider.php

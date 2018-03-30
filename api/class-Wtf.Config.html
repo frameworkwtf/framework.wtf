@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+
+        <link rel="stylesheet" href="resources/bootstrap.min.css">
+        <link rel="stylesheet" href="resources/style.css">
+
+        <title>
+            Class Wtf\Config
+        </title>
+    </head>
+
+    <body>
+<div id="navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="index.html">
+                                Overview
+                            </a>
+                        </li>
+
+                            <li>
+                                <a href="classes.html">Classes</a>
+                            </li>
+
+                            <li>
+                                <a href="interfaces.html">Interfaces</a>
+                            </li>
+
+                            <li>
+                                <a href="traits.html">Traits</a>
+                            </li>
+
+
+
+                    </ul>
+
+                    <form id="search" class="pull-right">
+                        <input type="text" name="q" class="form-control text" placeholder="Search class, function or namespace" autofocus>
+                    </form>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+            <div id="breadcrumbs">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+
+
+<div class="pull-left type">
+    <span class="label label-success">Class</span>
+</div>
+
+<ol class="breadcrumb pull-left">
+        <li>
+            <a href="namespace-Wtf.html">Wtf</a>
+        </li>
+
+        <li class="backslash">\</li>
+        <li class="active">Config</li>
+</ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+    <h1>Config</h1>
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                Adopted PHPixie\Config 2.x.
+            </div>
+        </div>
+
+
+
+
+    <div class="info">
+        
+
+            <a href="https://github.com/dracony/PHPixie-Core/blob/master/classes/PHPixie/Config.php">https://github.com/dracony/PHPixie-Core/blob/master/classes/PHPixie/Config.php</a><br>
+            <a href="source-class-Wtf.Config.html" class="open-source-code">Open source code</a>
+        <br>
+    </div>
+
+        <table class="summary table table-bordered table-responsive table-striped" id="methods">
+            <tr><th colspan="3">Methods Summary</th></tr>
+
+
+
+<tr id="___construct">
+
+    <td class="attributes col-md-1">
+        <code class="keyword">
+                 public 
+                
+                
+        </code>
+    </td>
+
+    <td class="name">
+        <div>
+            <a class="anchor pull-right" href="#___construct">#</a>
+            <code><a href="source-class-Wtf.Config.html#23-26">__construct</a>( <span> Psr\Container\ContainerInterface <span class="property-name">$container</span> </span> )</code>
+
+            <div class="description">
+                
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </td>
+</tr>
+
+
+
+<tr id="___invoke">
+
+    <td class="attributes col-md-1">
+        <code class="keyword">
+                 public 
+                
+                
+        </code>
+    </td>
+
+    <td class="name">
+        <div>
+            <a class="anchor pull-right" href="#___invoke">#</a>
+            <code><a href="source-class-Wtf.Config.html#43-62">__invoke</a>( <span> string <span class="property-name">$string</span> </span>, <span> string <span class="property-name">$default</span> = <span class="php-keyword1">NULL</span></span> )</code>
+
+            <div class="description">
+                Retrieves a configuration value. You can use a dot notation
+to access properties in group arrays. The first part of the key
+specifies the configuration file from which options should be loaded from
+&lt;code&gt;
+    //Loads ['default']['user'] option
+    //from database.php configuration file
+    $config('database.default.user');
+&lt;/code&gt;.
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </td>
+</tr>
+
+
+
+<tr id="_getGroup">
+
+    <td class="attributes col-md-1">
+        <code class="keyword">
+                 protected 
+                
+                
+        </code>
+    </td>
+
+    <td class="name">
+        <div>
+            <a class="anchor pull-right" href="#_getGroup">#</a>
+            <code><a href="source-class-Wtf.Config.html#72-79">getGroup</a>( <span> string <span class="property-name">$name</span> </span> )</code>
+
+            <div class="description">
+                Loads a group configuration file it has not been loaded before and
+returns its options. If the group doesn't exist creates an empty one.
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </td>
+</tr>
+
+
+
+<tr id="_loadGroup">
+
+    <td class="attributes col-md-1">
+        <code class="keyword">
+                 protected 
+                
+                
+        </code>
+    </td>
+
+    <td class="name">
+        <div>
+            <a class="anchor pull-right" href="#_loadGroup">#</a>
+            <code><a href="source-class-Wtf.Config.html#86-91">loadGroup</a>( <span> string <span class="property-name">$name</span> </span> )</code>
+
+            <div class="description">
+                Load group from file by group name.
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </td>
+</tr>
+        </table>
+
+
+
+
+
+        <table class="summary table table-bordered table-responsive table-striped" id="properties">
+            <tr><th colspan="3">Properties Summary</th></tr>
+<tr id="$container">
+    <td class="attributes">
+        <code class="keyword">
+            protected 
+
+            Psr\Container\ContainerInterface
+        </code>
+    </td>
+
+    <td class="name">
+        <code>
+            <a href="source-class-Wtf.Config.html#21" class="property-name">$container</a>
+        </code>
+        <div class="description">
+            PSR-11 Container.
+
+                <a href="https://github.com/dracony/PHPixie-Core/blob/master/classes/PHPixie/Config.php">https://github.com/dracony/PHPixie-Core/blob/master/classes/PHPixie/Config.php</a><br>
+        </div>
+    </td>
+    <td class="value">
+        <div>
+            <a href="#$container" class="anchor pull-right">#</a>
+            <code><span class="php-keyword1">NULL</span></code>
+        </div>
+    </td>
+</tr>
+        </table>
+
+
+    <div id="footer">
+        Generated by <a href="https://github.com/apigen/apigen">ApiGen</a>
+    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="resources/jquery-3.2.1.min.js"></script>
+        <script src="resources/jquery-ui-1.12.1.min.js"></script>
+
+        <script src="elementlist.js"></script>
+        <script src="resources/main.js"></script>
+    </body>
+</html>
+
+
