@@ -6,10 +6,11 @@ order: 2
 
 <!-- vim-markdown-toc GFM -->
 
-+ [Simple App](#simple-app)
++ [Simple App (without skeleton)](#simple-app-without-skeleton)
     * [How to use magic?](#how-to-use-magic)
 + [Advanced usage](#advanced-usage)
     * [Create new project with skeleton](#create-new-project-with-skeleton)
+    * [Configure crash reporting tool](#configure-crash-reporting-tool)
     * [Configure routes](#configure-routes)
     * [Install addtional packages](#install-addtional-packages)
         - [HTML](#html)
@@ -18,7 +19,7 @@ order: 2
 
 <!-- vim-markdown-toc -->
 
-# Simple App
+# Simple App (without skeleton)
 
 Slim framework examples
 
@@ -32,6 +33,11 @@ use \Psr\Http\Message\ResponseInterface as Response;
 require 'vendor/autoload.php';
 
 $app = new \Wtf\App;
+$app->get('/', function (Request $request, Response $response) {
+    $response->getBody()->write("Hello, world. <a href='/hello/alice'>Say 'hello' to Alice</a>");
+
+    return $response;
+});
 $app->get('/hello/{name}', function (Request $request, Response $response) {
     $name = $request->getAttribute('name');
     $response->getBody()->write("Hello, $name");
@@ -91,6 +97,22 @@ Pre-made skeleton with docker and easy-to-use structure
 
 ```bash
 composer create-project wtf/skeleton
+```
+
+## Configure crash reporting tool
+
+WTF has deeply integrated [Sentry](https://sentry.io) crash reporting tool, so we highly recommend you to set Sentry DSN into your `suit.php` config file, like this:
+
+```php
+<?php
+return [
+    //...
+    'sentry' => [
+        'dsn' => 'https://fa38d114872b4533834f0ffd53e59ddc:54ffe4da5b23455da1b93d4b6abc246e@sentry.io/211424', //it's demo project, get your own DSN and set it here
+        'options' => [], //Sentry options
+    ],
+    // ...
+];
 ```
 
 ## Configure routes
