@@ -23,7 +23,13 @@ order: 2
 
 Slim framework examples
 
-Just use Slim "Hello world":
+First, install `wtf/core` package:
+
+```bash
+composer require wtf/core
+```
+
+And just use Slim "Hello world":
 
 ```php
 <?php
