@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="resources/style.css">
 
         <title>
-            Class Wtf\Provider
+            Class Wtf\Provider | WTF Framework API
         </title>
     </head>
 
@@ -23,7 +23,7 @@
                     <ul class="nav navbar-nav">
                         <li>
                             <a href="index.html">
-                                Overview
+                                WTF Framework API
                             </a>
                         </li>
 
@@ -41,6 +41,18 @@
 
 
 
+                            <li class="separator"></li>
+                            <li>
+                                <a href="annotation-group-todo.html">
+                                    @Todo
+                                </a>
+                            </li>
+                            <li class="separator"></li>
+                            <li>
+                                <a href="annotation-group-deprecated.html">
+                                    @Deprecated
+                                </a>
+                            </li>
                     </ul>
 
                     <form id="search" class="pull-right">
@@ -123,7 +135,7 @@
     <td class="name">
         <div>
             <a class="anchor pull-right" href="#_register">#</a>
-            <code><a href="source-class-Wtf.Provider.html#21-37">register</a>( <span> Pimple\Container <span class="property-name">$container</span> </span> )</code>
+            <code><a href="source-class-Wtf.Provider.html#21-44">register</a>( <span> Pimple\Container <span class="property-name">$container</span> </span> )</code>
 
             <div class="description">
                 {@inheritdoc}
@@ -150,70 +162,6 @@
 
 
 
-<tr id="_getSuitConfig">
-
-    <td class="attributes col-md-1">
-        <code class="keyword">
-                 protected 
-                
-                
-        </code>
-    </td>
-
-    <td class="name">
-        <div>
-            <a class="anchor pull-right" href="#_getSuitConfig">#</a>
-            <code><a href="source-class-Wtf.Provider.html#44-49">getSuitConfig</a>( )</code>
-
-            <div class="description">
-                Prepare config object.
-
-
-
-
-
-
-
-
-            </div>
-        </div>
-    </td>
-</tr>
-
-
-
-<tr id="_getConfig">
-
-    <td class="attributes col-md-1">
-        <code class="keyword">
-                 protected 
-                
-                
-        </code>
-    </td>
-
-    <td class="name">
-        <div>
-            <a class="anchor pull-right" href="#_getConfig">#</a>
-            <code><a href="source-class-Wtf.Provider.html#58-63">getConfig</a>( <span> Pimple\Container <span class="property-name">$container</span> </span> )</code>
-
-            <div class="description">
-                Add 'shortcut' to suit config __invoke().
-
-
-
-
-
-
-
-
-            </div>
-        </div>
-    </td>
-</tr>
-
-
-
 <tr id="_getSentry">
 
     <td class="attributes col-md-1">
@@ -227,7 +175,7 @@
     <td class="name">
         <div>
             <a class="anchor pull-right" href="#_getSentry">#</a>
-            <code><a href="source-class-Wtf.Provider.html#68-81">getSentry</a>( <span> Pimple\Container <span class="property-name">$container</span> </span> )</code>
+            <code><a href="source-class-Wtf.Provider.html#49-62">getSentry</a>( <span> Pimple\Container <span class="property-name">$container</span> </span> )</code>
 
             <div class="description">
                 Add Sentry integration.
@@ -259,7 +207,7 @@
     <td class="name">
         <div>
             <a class="anchor pull-right" href="#_setControllerLoader">#</a>
-            <code><a href="source-class-Wtf.Provider.html#90-106">setControllerLoader</a>( <span> Pimple\Container <span class="property-name">$container</span> </span> )</code>
+            <code><a href="source-class-Wtf.Provider.html#71-87">setControllerLoader</a>( <span> Pimple\Container <span class="property-name">$container</span> </span> )</code>
 
             <div class="description">
                 Set controller() function into container.
@@ -291,7 +239,7 @@
     <td class="name">
         <div>
             <a class="anchor pull-right" href="#_setErrorHandler">#</a>
-            <code><a href="source-class-Wtf.Provider.html#115-127">setErrorHandler</a>( <span> Pimple\Container <span class="property-name">$container</span> </span> )</code>
+            <code><a href="source-class-Wtf.Provider.html#96-108">setErrorHandler</a>( <span> Pimple\Container <span class="property-name">$container</span> </span> )</code>
 
             <div class="description">
                 Set error handler with sentry.
