@@ -5,6 +5,10 @@ order: 1
 
 # What the ...?
 
+**[Slim Framework](https://slimframework.com)** with useful addons.
+
+> Read **[Slim](https://www.slimframework.com/docs/)** docs first.
+
 ## Concept
 
 As a web developer, you need some infrastructure code for your applications. For example: dependency manager, router, DI container and so on.

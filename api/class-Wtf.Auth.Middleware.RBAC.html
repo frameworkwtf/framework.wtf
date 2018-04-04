@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="resources/style.css">
 
         <title>
-            Class Wtf\Auth\Repository\User | WTF Framework API
+            Class Wtf\Auth\Middleware\RBAC | WTF Framework API
         </title>
     </head>
 
@@ -83,11 +83,11 @@
         </li>
             <li class="backslash">\</li>
         <li>
-            <a href="namespace-Wtf.Auth.Repository.html">Repository</a>
+            <a href="namespace-Wtf.Auth.Middleware.html">Middleware</a>
         </li>
 
         <li class="backslash">\</li>
-        <li class="active">User</li>
+        <li class="active">RBAC</li>
 </ol>
                         </div>
                     </div>
@@ -97,8 +97,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-    <h1>User</h1>
+    <h1>RBAC</h1>
 
+        <div class="panel panel-default">
+            <div class="panel-body">
+                Role-Based Access Control.
+            </div>
+        </div>
 
         <dl class="tree">
             <dd>
@@ -107,10 +112,6 @@
                         Wtf\Root
                     </a>
 
-                    implements
-                        <a href="interface-Wtf.Auth.Repository.RepositoryInterface.html">
-                            Wtf\Auth\Repository\RepositoryInterface
-                        </a>
 
             </dd>
         </dl>
@@ -120,7 +121,7 @@
     <div class="info">
         
 
-            <a href="source-class-Wtf.Auth.Repository.User.html" class="open-source-code">Open source code</a>
+            <a href="source-class-Wtf.Auth.Middleware.RBAC.html" class="open-source-code">Open source code</a>
         <br>
     </div>
 
@@ -129,7 +130,7 @@
 
 
 
-<tr id="_getLoginFields">
+<tr id="___invoke">
 
     <td class="attributes col-md-1">
         <code class="keyword">
@@ -141,51 +142,11 @@
 
     <td class="name">
         <div>
-            <a class="anchor pull-right" href="#_getLoginFields">#</a>
-            <code><a href="source-class-Wtf.Auth.Repository.User.html#14-17">getLoginFields</a>( )</code>
+            <a class="anchor pull-right" href="#___invoke">#</a>
+            <code><a href="source-class-Wtf.Auth.Middleware.RBAC.html#25-47">__invoke</a>( <span> Psr\Http\Message\ServerRequestInterface <span class="property-name">$request</span> </span>, <span> Psr\Http\Message\ResponseInterface <span class="property-name">$response</span> </span>, <span> callable <span class="property-name">$next</span> </span> )</code>
 
             <div class="description">
-                {@inheritdoc}
-
-
-
-
-
-
-
-
-                        <h2>Implementation of</h2>
-                        <div>
-                            <code>
-                                <a href="interface-Wtf.Auth.Repository.RepositoryInterface.html#_getLoginFields">
-                                    Wtf\Auth\Repository\RepositoryInterface::getLoginFields()
-                                </a>
-                            </code>
-                        </div>
-            </div>
-        </div>
-    </td>
-</tr>
-
-
-
-<tr id="_getPasswordField">
-
-    <td class="attributes col-md-1">
-        <code class="keyword">
-                 public 
-                
-                
-        </code>
-    </td>
-
-    <td class="name">
-        <div>
-            <a class="anchor pull-right" href="#_getPasswordField">#</a>
-            <code><a href="source-class-Wtf.Auth.Repository.User.html#24-27">getPasswordField</a>( )</code>
-
-            <div class="description">
-                Get password field, eg: 'password'.
+                Run RBAC check.
 
 
 
@@ -201,11 +162,11 @@
 
 
 
-<tr id="_login">
+<tr id="_isAllowed">
 
     <td class="attributes col-md-1">
         <code class="keyword">
-                 public 
+                 protected 
                 
                 
         </code>
@@ -213,11 +174,11 @@
 
     <td class="name">
         <div>
-            <a class="anchor pull-right" href="#_login">#</a>
-            <code><a href="source-class-Wtf.Auth.Repository.User.html#32-44">login</a>( <span> string <span class="property-name">$login</span> </span>, <span> string <span class="property-name">$password</span> </span> )</code>
+            <a class="anchor pull-right" href="#_isAllowed">#</a>
+            <code><a href="source-class-Wtf.Auth.Middleware.RBAC.html#57-67">isAllowed</a>( <span> Psr\Http\Message\ServerRequestInterface <span class="property-name">$request</span> </span>, <span> string <span class="property-name">$role</span> </span> )</code>
 
             <div class="description">
-                {@inheritdoc}
+                Check if request allowed for current user.
 
 
 
@@ -226,54 +187,6 @@
 
 
 
-                        <h2>Implementation of</h2>
-                        <div>
-                            <code>
-                                <a href="interface-Wtf.Auth.Repository.RepositoryInterface.html#_login">
-                                    Wtf\Auth\Repository\RepositoryInterface::login()
-                                </a>
-                            </code>
-                        </div>
-            </div>
-        </div>
-    </td>
-</tr>
-
-
-
-<tr id="_getByLogin">
-
-    <td class="attributes col-md-1">
-        <code class="keyword">
-                 public 
-                
-                
-        </code>
-    </td>
-
-    <td class="name">
-        <div>
-            <a class="anchor pull-right" href="#_getByLogin">#</a>
-            <code><a href="source-class-Wtf.Auth.Repository.User.html#49-65">getByLogin</a>( <span> string <span class="property-name">$login</span> </span> )</code>
-
-            <div class="description">
-                {@inheritdoc}
-
-
-
-
-
-
-
-
-                        <h2>Implementation of</h2>
-                        <div>
-                            <code>
-                                <a href="interface-Wtf.Auth.Repository.RepositoryInterface.html#_getByLogin">
-                                    Wtf\Auth\Repository\RepositoryInterface::getByLogin()
-                                </a>
-                            </code>
-                        </div>
             </div>
         </div>
     </td>
