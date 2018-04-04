@@ -123,6 +123,8 @@ if(!$this->auth->isLoggedIn()) {
     $this->auth->login('you@email.com', 'password');
 }
 $this->auth->getUser();
+//or simple
+$this->user;
 ```
 
 **Logout**;
