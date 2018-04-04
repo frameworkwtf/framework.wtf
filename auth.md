@@ -12,8 +12,9 @@ Authorization module that supports multiple auth methods (storages)
 * [Install](#install)
     - [Configure your app](#configure-your-app)
     - [Add new provider and middleware](#add-new-provider-and-middleware)
+    - [Add `rbac` to your routes](#add-rbac-to-your-routes)
 * [Usage](#usage)
-    - [Provided methods](#provided-methods)
+    - [Auth](#auth)
     - [Examples](#examples)
 
 <!-- vim-markdown-toc -->
@@ -32,7 +33,7 @@ composer require dflydev/fig-cookies
 
 ### Configure your app
 
-Create config file `auth.php`:
+Create config file `app/config/auth.php`:
 
 ```php
 <?php
@@ -43,28 +44,46 @@ return [
     'entity' => 'user', // user entity
     'storage' => \Wtf\Auth\Storage\Session::class, // can be Session, Cookie, JWT
     'repository' => \Wtf\Auth\Repository\User::class, // default user repository
+    'rbac' => [
+        'defaultRole' => 'anonymous' //default unauthorized role
+    ],
 ];
 ```
 
 ### Add new provider and middleware
 
-1. `\Wtf\Auth\Provider` into your providers list (`suit.php` config)
+1. `\Wtf\Auth\Provider` into your providers list (`app/config/suit.php` config)
+2. `rbac_middleware` into your middlewares list (`app/config/suit.php` config)
 
+### Add `rbac` to your routes
+
+Example route group `home` (from skeleton):
+
+```php
+<?php
+
+return [
+    // ...
+    'second' => [
+        'pattern' => '/second', //route pattern, match: /home/second
+        'methods' => ['GET', 'POST', 'PATCH'], //Allowed HTTP methods
+        'rbac' => [
+            'anonymous' => ['GET'], // allow unauthorized users (role: anonymous) to GET /home/second
+            'user' => ['GET', 'POST'], // allow authorized users (role: user) to GET and POST /home/second
+            'admin' => ['GET', 'POST', 'PATCH'] //allow admins (role: admin) to GET, POST and PATCH /home/second
+        ],
+    ],
+];
+```
 
 ## Usage
 
 
-### Provided methods
+### Auth
 
 Each auth type uses following methods:
 
 ```php
-/**
- * Login user
- * @param string $login User login (email, username, phone, etc)
- * @param string $password User password
- * @return mixed Can be JWT token string or user object
- */
 public function login(string $login, string $password)
 ```
 
@@ -75,26 +94,14 @@ Result of `login()` different for each auth type:
 * **Session**: will return user entity object
 
 ```php
-/**
- * Check if current user is logged in.
- * @return bool
- */
 public function isLoggedIn(): bool
 ```
 
 ```php
-/**
- * Get current user.
- * @return null|Root
- */
 public function getUser(): ?Root
 ```
 
 ```php
-/**
- * Logout current user
- * @return void
- */
 public function logout(): void
 ```
 

@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="resources/style.css">
 
         <title>
-            Class Wtf\Auth\Provider | WTF Framework API
+            Class Wtf\Auth\Middleware\RBAC | WTF Framework API
         </title>
     </head>
 
@@ -81,9 +81,13 @@
         <li>
             <a href="namespace-Wtf.Auth.html">Auth</a>
         </li>
+            <li class="backslash">\</li>
+        <li>
+            <a href="namespace-Wtf.Auth.Middleware.html">Middleware</a>
+        </li>
 
         <li class="backslash">\</li>
-        <li class="active">Provider</li>
+        <li class="active">RBAC</li>
 </ol>
                         </div>
                     </div>
@@ -93,16 +97,21 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-    <h1>Provider</h1>
+    <h1>RBAC</h1>
 
+        <div class="panel panel-default">
+            <div class="panel-body">
+                Role-Based Access Control.
+            </div>
+        </div>
 
         <dl class="tree">
             <dd>
+                    extends
+                    <a href="class-Wtf.Root.html">
+                        Wtf\Root
+                    </a>
 
-                    implements
-                        <a href="interface-Pimple.ServiceProviderInterface.html">
-                            Pimple\ServiceProviderInterface
-                        </a>
 
             </dd>
         </dl>
@@ -112,7 +121,7 @@
     <div class="info">
         
 
-            <a href="source-class-Wtf.Auth.Provider.html" class="open-source-code">Open source code</a>
+            <a href="source-class-Wtf.Auth.Middleware.RBAC.html" class="open-source-code">Open source code</a>
         <br>
     </div>
 
@@ -121,7 +130,7 @@
 
 
 
-<tr id="_register">
+<tr id="___invoke">
 
     <td class="attributes col-md-1">
         <code class="keyword">
@@ -133,11 +142,43 @@
 
     <td class="name">
         <div>
-            <a class="anchor pull-right" href="#_register">#</a>
-            <code><a href="source-class-Wtf.Auth.Provider.html#12-30">register</a>( <span> Pimple\Container <span class="property-name">$container</span> </span> )</code>
+            <a class="anchor pull-right" href="#___invoke">#</a>
+            <code><a href="source-class-Wtf.Auth.Middleware.RBAC.html#25-47">__invoke</a>( <span> Psr\Http\Message\ServerRequestInterface <span class="property-name">$request</span> </span>, <span> Psr\Http\Message\ResponseInterface <span class="property-name">$response</span> </span>, <span> callable <span class="property-name">$next</span> </span> )</code>
 
             <div class="description">
+                Run RBAC check.
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </td>
+</tr>
+
+
+
+<tr id="_isAllowed">
+
+    <td class="attributes col-md-1">
+        <code class="keyword">
+                 protected 
                 
+                
+        </code>
+    </td>
+
+    <td class="name">
+        <div>
+            <a class="anchor pull-right" href="#_isAllowed">#</a>
+            <code><a href="source-class-Wtf.Auth.Middleware.RBAC.html#57-67">isAllowed</a>( <span> Psr\Http\Message\ServerRequestInterface <span class="property-name">$request</span> </span>, <span> string <span class="property-name">$role</span> </span> )</code>
+
+            <div class="description">
+                Check if request allowed for current user.
 
 
 
@@ -146,25 +187,46 @@
 
 
 
-                        <h2>Implementation of</h2>
-                        <div>
-                            <code>
-                                <a href="interface-Pimple.ServiceProviderInterface.html#_register">
-                                    Pimple\ServiceProviderInterface::register()
-                                </a>
-                            </code>
-                        </div>
             </div>
         </div>
     </td>
 </tr>
         </table>
 
+        <table class="summary table table-bordered table-responsive table-striped">
+            <tr>
+                <th>
+                    Methods inherited from <a href="class-Wtf.Root.html#methods">Wtf\Root</a>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                        <code><a href="class-Wtf.Root.html#___construct">__construct()</a></code>, 
+                        <code><a href="class-Wtf.Root.html#___call">__call()</a></code>, 
+                        <code><a href="class-Wtf.Root.html#___get">__get()</a></code>, 
+                        <code><a href="class-Wtf.Root.html#_get">get()</a></code>, 
+                        <code><a href="class-Wtf.Root.html#_set">set()</a></code>
+                </td>
+            </tr>
+        </table>
 
 
 
 
 
+            <table class="summary table table-bordered table-responsive table-striped">
+                <tr>
+                    <th>
+                        Properties inherited from <a href="class-Wtf.Root.html#properties">Wtf\Root</a>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                            <code><a href="class-Wtf.Root.html#$container" class="property-name">$container</a></code>, 
+                            <code><a href="class-Wtf.Root.html#$data" class="property-name">$data</a></code>
+                    </td>
+                </tr>
+            </table>
 
     <div id="footer">
         Generated by <a href="https://github.com/apigen/apigen">ApiGen</a>
