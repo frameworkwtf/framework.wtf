@@ -105,6 +105,14 @@ public function getUser(): ?Root
 public function logout(): void
 ```
 
+```php
+public function forgot(string $login): string
+```
+
+```php
+public function reset(string $code, string $new_password): bool
+```
+
 ### Examples
 
 `$this->auth` available from any child of `\Wtf\Root` class
@@ -130,4 +138,23 @@ $this->user;
 **Logout**;
 ```php
 $this->auth->logout();
+```
+
+**Forgot / reset password**:
+
+```php
+// User sends login (email, etc.)
+$login = 'user_who_forgot_password';
+
+// forgot() will find user by login and set special one-time code to allow password reset
+$code = $this->auth->forgot($login);
+
+// ...
+// you send email to user with that $code
+// user clicks on link with $code from email you sent him
+// you shows user page, where he can set new password,
+// after that you calls following function
+$isPasswordReset = $this->auth->reset($code, $new_password);
+
+//$isPasswordReset will be (bool) true if password was changed successful
 ```
