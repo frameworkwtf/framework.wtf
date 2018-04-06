@@ -6,173 +6,113 @@ order: 2
 
 <!-- vim-markdown-toc GFM -->
 
-+ [Simple App (without skeleton)](#simple-app-without-skeleton)
-    * [How to use magic?](#how-to-use-magic)
-+ [Advanced usage](#advanced-usage)
-    * [Create new project with skeleton](#create-new-project-with-skeleton)
-    * [Configure crash reporting tool](#configure-crash-reporting-tool)
-    * [Configure routes](#configure-routes)
-    * [Install addtional packages](#install-addtional-packages)
-        - [HTML](#html)
-        - [Find out more](#find-out-more)
-    * [Docker](#docker)
++ [Prerequisites](#prerequisites)
++ [Installation](#installation)
++ [Now let's REST](#now-lets-rest)
++ [Read Next](#read-next)
 
 <!-- vim-markdown-toc -->
 
-# Simple App (without skeleton)
+# Prerequisites
 
-Slim framework examples
+* [ ] Docker
+* [ ] docker-compose
+* [ ] Composer
+* [ ] PHP ^7.1
 
-First, install `wtf/core` package:
-
-```bash
-composer require wtf/core
-```
-
-And just use Slim "Hello world":
-
-```php
-<?php
-use \Psr\Http\Message\ServerRequestInterface as Request;
-use \Psr\Http\Message\ResponseInterface as Response;
-
-require 'vendor/autoload.php';
-
-$app = new \Wtf\App;
-$app->get('/', function (Request $request, Response $response) {
-    $response->getBody()->write("Hello, world. <a href='/hello/alice'>Say 'hello' to Alice</a>");
-
-    return $response;
-});
-$app->get('/hello/{name}', function (Request $request, Response $response) {
-    $name = $request->getAttribute('name');
-    $response->getBody()->write("Hello, $name");
-
-    return $response;
-});
-$app->run();
-```
-
-## How to use magic?
-
-You need to pass path to your config folder in App constructor (like slim settings, see [application configuration](https://www.slimframework.com/docs/objects/application.html#application-configuration)), example:
-
-```php
-
-$config = [
-    'config_dir' => __DIR__.'/config',
-    'settings' => [
-        'displayErrorDetails' => true,
-
-        'logger' => [
-            'name' => 'slim-app',
-            'level' => Monolog\Logger::DEBUG,
-            'path' => __DIR__ . '/../logs/app.log',
-        ],
-    ],
-];
-$app = new \Wtf\App($config);
-```
-
-And now, magic!
-
-```php
-$root = new \Wtf\Root($app->getContainer());
-echo $root->config('app.site.name', 'production');
-```
-
-Place file `app.php` in `__DIR__.'/config'` folder (you passed it in App constructor, remember?):
-
-```php
-<?php return [
-    'site' => [
-        'name' => 'WTF Example',
-        'url' => 'https://example.com',
-        'parent' => 'https://slimframework.com',
-    ],
-];
-```
-
-And so on :)
-
-# Advanced usage
-
-## Create new project with skeleton
-
-Pre-made skeleton with docker and easy-to-use structure
+# Installation
 
 ```bash
-composer create-project wtf/skeleton
+composer create-project wtf/skeleton your-app
 ```
 
-## Configure crash reporting tool
-
-WTF has deeply integrated [Sentry](https://sentry.io) crash reporting tool, so we highly recommend you to set Sentry DSN into your `suit.php` config file, like this:
-
-```php
-<?php
-return [
-    //...
-    'sentry' => [
-        'dsn' => 'https://fa38d114872b4533834f0ffd53e59ddc:54ffe4da5b23455da1b93d4b6abc246e@sentry.io/211424', //it's demo project, get your own DSN and set it here
-        'options' => [], //Sentry options
-    ],
-    // ...
-];
-```
-
-## Configure routes
-
-[Documentation](https://www.slimframework.com/docs/objects/router.html#how-to-create-routes)
-
-By default, route groups configured in `app/config/routes/` dir. Each file is a separate route group.
-
-Example: if you want to create admin panel for your site, just place file `app/config/routes/admin.php` and add routes in it - all defined routes will have the prefix `http://your.site/admin`
-
-## Install addtional packages
-
-By default, the skeleton has only Core module installed, if you want more - feel free to add any library you need, but WTF has some pre-configured "bundles", check them out on [GitHub](https://github.com/frameworkwtf)
-
-### HTML
-
-If you want to generate HTML on backend side, just follow these steps and you will get [Twig](https://twig.symfony.com/), sessions and flash messages pre-configured and integrated in Slim framework.
-
-* Install package:
+This command creates the skeleton project with structure, shown below:
 
 ```bash
-composer require wtf/html
+your-app
+├── app                      # Main app dir
+│   ├── cache                # Cache dir
+│   ├── config               # Config dir
+│   ├── migrations           # DB migrations dir
+│   ├── public               # Public dir accessible from internet
+│   ├── seeds                # DB seeds dir
+│   ├── src                  # App source code
+│   │   ├── Controller       # Controllers
+│   │   ├── Controller.php   # Main app controller
+│   │   ├── Entity           # Entities
+│   │   ├── ErrorHandler.php # App error handler
+│   │   ├── Middleware       # App middlewares
+│   │   └── Provider.php     # App service provider
+│   ├── tests                # App tests
+│   └── vendor               # 3rdParty dependencies
+├── composer.json            # package manager configuration
+├── Dockerfile               # Docker configuration
+├── .dockerignore            # List of ignored files in docker
+├── env                      # Docker environments
+│   ├── dev.yml              # Development, default
+│   ├── prod.yml             # Production
+│   └── qa.yml               # QA/Staging
+├── .env                     # docker-compose env
+├── .gitignore               # List of ignored files in git
+├── .gitlab-ci.yml           # Gitlab CI/CD configuration
+├── .php_cs.dist             # php-cs-fixer configuration
+├── phpunit.xml.dist         # PHPUnit configuration
+└── README.md                # README
 ```
 
-* Add configuration file `html.php` in your config dir (by default, `app/config`):
+# Now let's REST
 
-```php
-<?php
-
-declare(strict_types=1);
-
-return [
-    'template_path' => __DIR__.'/../views/',
-    'cache_path' => __DIR__.'/../cache/views',
-];
-```
-
-* Add provider `\Wtf\Html\Provider` into your `suit.php` config file (_suit.providers_)
-* Add middleware `session_middleware` into your `suit.php` config file (_suit.middlewares_)
-
-### Find out more
-
-on [GitHub](https://github.com/search?utf8=✓&q=topic:wtf-module)
-
-## Docker
-
-WTF has predefined docker configs for quick start. You need to have Docker CE on your target machine (laptop,server,etc.) to run it
-
-[Read more]({{ site.baseurl }}/docker)
-
-Example (just for development):
+Generate your first CRUD called `App`:
 
 ```bash
-docker run -it -p 80:8080 -v `pwd`:/var/www frameworkwtf/docker
+app/vendor/bin/wtf generate:crud App -c app/config/generator.php
 ```
 
-PS: Docker image can be used in production, but you should set production mode via env var
+You should see something like this in output:
+
+```
+WTF framework generator
+
+Controller saved to ./app/src/Controller/App.php
+Test saved to ./app/tests/App.php
+Entity saved to ./app/src/Entity/App.php
+Test saved to ./app/tests/App.php
+Route saved to ./app/config/routes/app.php
+Migration saved to ./app/migrations/20180406100619_init_app.php
+```
+
+Now, let's add `What the fuck? It works!` text in your controller:
+
+1. Open `app/src/Controller/App.php`
+2. Replace entire content in function `indexAction()` with `return $this->json(['What the fuck?' => 'It works!']);`
+
+```php
+public function indexAction(): ResponseInterface
+{
+    return $this->json(['What the fuck?' => 'It works!']);
+}
+```
+
+And let's test it:
+
+```bash
+docker-compose up -d
+curl http://localhost:8080/app
+```
+
+The result will be:
+
+```json
+{"error":{"message":null,"fields":[]},"count":1,"data":{"What the fuck?":"It works!"}}
+```
+
+That's all, folks!
+
+# Read Next
+
+{% assign pages = site.pages | sort: 'order' %}
+{% for item in pages %}
+{%- if item.title and item.title != "404 - Page not found" and item.title != page.title -%}
+<[{{ item.title }}]({{ item.url}})>&nbsp;
+{%- endif -%}
+{% endfor %}<[API docs]({{ site.baseurl }}/api)>

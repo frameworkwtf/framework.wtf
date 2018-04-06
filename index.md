@@ -16,8 +16,8 @@ Let's check the following example:
 <table width="80%">
     <thead width="100%">
         <tr width="80%">
-            <td width="50%"><b>Slim Framework</b></td>
             <td width="50%"><b>WTF Framework</b></td>
+            <td width="50%"><b>Slim Framework</b></td>
         </tr>
     </thead>
     <tbody>
@@ -29,7 +29,7 @@ Let's check the following example:
 
 <span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
 
-<span class="nv">$app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Slim\App</span><span class="p">;</span>
+<span class="nv">$app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Wtf\App</span><span class="p">;</span>
 <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'/hello/{name}'</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">,</span> <span class="nx">Response</span> <span class="nv">$response</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$args</span><span class="p">)</span> <span class="p">{</span>
     <span class="nv">$name</span> <span class="o">=</span> <span class="nv">$args</span><span class="p">[</span><span class="s1">'name'</span><span class="p">];</span>
     <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">getBody</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span><span class="s2">"Hello, </span><span class="nv">$name</span><span class="s2">"</span><span class="p">);</span>
@@ -46,7 +46,7 @@ Let's check the following example:
 
 <span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
 
-<span class="nv">$app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Wtf\App</span><span class="p">;</span>
+<span class="nv">$app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Slim\App</span><span class="p">;</span>
 <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'/hello/{name}'</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">,</span> <span class="nx">Response</span> <span class="nv">$response</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$args</span><span class="p">)</span> <span class="p">{</span>
     <span class="nv">$name</span> <span class="o">=</span> <span class="nv">$args</span><span class="p">[</span><span class="s1">'name'</span><span class="p">];</span>
     <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">getBody</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span><span class="s2">"Hello, </span><span class="nv">$name</span><span class="s2">"</span><span class="p">);</span>
