@@ -27,6 +27,8 @@ composer require wtf/auth
 composer require wtf/rest
 # for Cookie
 composer require dflydev/fig-cookies
+# for LDAP provider
+composer require symfony/ldap:^4
 
 # for Session you should install PHP session module
 ```
@@ -43,9 +45,32 @@ declare(strict_types=1);
 return [
     'entity' => 'user', // user entity
     'storage' => \Wtf\Auth\Storage\Session::class, // can be Session, Cookie, JWT
-    'repository' => \Wtf\Auth\Repository\User::class, // default user repository
+    'repository' => \Wtf\Auth\Repository\User::class, // default user repository, available: LDAP
     'rbac' => [
         'defaultRole' => 'anonymous' //default unauthorized role
+    ],
+    'ldap' => [ //ONLY for ldap
+        'server' => [
+            'host' => 'ldap.server',
+            'port' => 389,
+            'encryption' => 'none',
+            'options' => [
+                'protocol_version' => 3,
+                'referrals' => true,
+            ],
+        ],
+        'admin' => [
+            'dn' => 'cn=admin,dc=framework,dc=wtf',
+            'password' => 'supersecret',
+        ],
+        'baseDN' => 'cn=Users,dc=framework,dc=wtf',
+        'fields' => [
+            'login' => ['uid', 'mail'], //login fields in LDAP direcotry
+            'loginInDb' => 'email', //login field in DB, for on-the-fly user creation
+            'map' => [ //fields map, <ldap field> => <db field>, for on the fly user creation
+                'cn' => 'name',
+            ],
+        ],
     ],
 ];
 ```
