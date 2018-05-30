@@ -226,70 +226,6 @@ Helper function, required for lazy load.
 
 
 
-<tr id="_getData">
-
-    <td class="attributes col-md-1">
-        <code class="keyword">
-                 public 
-                
-                
-        </code>
-    </td>
-
-    <td class="name">
-        <div>
-            <a class="anchor pull-right" href="#_getData">#</a>
-            <code><a href="source-class-Wtf.ORM.Entity.html#69-72">getData</a>( )</code>
-
-            <div class="description">
-                Return all entity data as array.
-
-
-
-
-
-
-
-
-            </div>
-        </div>
-    </td>
-</tr>
-
-
-
-<tr id="_setData">
-
-    <td class="attributes col-md-1">
-        <code class="keyword">
-                 public 
-                
-                
-        </code>
-    </td>
-
-    <td class="name">
-        <div>
-            <a class="anchor pull-right" href="#_setData">#</a>
-            <code><a href="source-class-Wtf.ORM.Entity.html#81-86">setData</a>( <span> array <span class="property-name">$data</span> </span> )</code>
-
-            <div class="description">
-                Set all data to entity.
-
-
-
-
-
-
-
-
-            </div>
-        </div>
-    </td>
-</tr>
-
-
-
 <tr id="_save">
 
     <td class="attributes col-md-1">
@@ -303,7 +239,7 @@ Helper function, required for lazy load.
     <td class="name">
         <div>
             <a class="anchor pull-right" href="#_save">#</a>
-            <code><a href="source-class-Wtf.ORM.Entity.html#97-128">save</a>( <span> bool <span class="property-name">$validate</span> = <span class="php-keyword1">true</span></span> )</code>
+            <code><a href="source-class-Wtf.ORM.Entity.html#73-104">save</a>( <span> bool <span class="property-name">$validate</span> = <span class="php-keyword1">true</span></span> )</code>
 
             <div class="description">
                 Save entity data in db.
@@ -335,7 +271,7 @@ Helper function, required for lazy load.
     <td class="name">
         <div>
             <a class="anchor pull-right" href="#_validate">#</a>
-            <code><a href="source-class-Wtf.ORM.Entity.html#137-149">validate</a>( <span> string <span class="property-name">$method</span> = <span class="php-quote">'save'</span></span> )</code>
+            <code><a href="source-class-Wtf.ORM.Entity.html#113-125">validate</a>( <span> string <span class="property-name">$method</span> = <span class="php-quote">'save'</span></span> )</code>
 
             <div class="description">
                 Validate entity data.
@@ -367,7 +303,7 @@ Helper function, required for lazy load.
     <td class="name">
         <div>
             <a class="anchor pull-right" href="#_load">#</a>
-            <code><a href="source-class-Wtf.ORM.Entity.html#160-172">load</a>( <span> mixed <span class="property-name">$value</span> </span>, <span> string <span class="property-name">$field</span> = <span class="php-quote">'id'</span></span>, <span> array <span class="property-name">$fields</span> = <span class="php-keyword1">NULL</span></span> )</code>
+            <code><a href="source-class-Wtf.ORM.Entity.html#136-148">load</a>( <span> mixed <span class="property-name">$value</span> </span>, <span> string <span class="property-name">$field</span> = <span class="php-quote">'id'</span></span>, <span> array <span class="property-name">$fields</span> = <span class="php-keyword1">NULL</span></span> )</code>
 
             <div class="description">
                 Load entity (data from db).
@@ -399,7 +335,7 @@ Helper function, required for lazy load.
     <td class="name">
         <div>
             <a class="anchor pull-right" href="#_loadAll">#</a>
-            <code><a href="source-class-Wtf.ORM.Entity.html#182-197">loadAll</a>( <span> array <span class="property-name">$where</span> = <span class="php-keyword1">array</span> ( )</span>, <span> bool <span class="property-name">$assoc</span> = <span class="php-keyword1">false</span></span> )</code>
+            <code><a href="source-class-Wtf.ORM.Entity.html#159-174">loadAll</a>( <span> array <span class="property-name">$where</span> = <span class="php-keyword1">array</span> ( )</span>, <span> bool <span class="property-name">$assoc</span> = <span class="php-keyword1">false</span></span>, <span> array <span class="property-name">$fields</span> = <span class="php-keyword1">NULL</span></span> )</code>
 
             <div class="description">
                 Get all entities from db.
@@ -431,7 +367,7 @@ Helper function, required for lazy load.
     <td class="name">
         <div>
             <a class="anchor pull-right" href="#_loadRelation">#</a>
-            <code><a href="source-class-Wtf.ORM.Entity.html#206-223">loadRelation</a>( <span> string <span class="property-name">$name</span> </span> )</code>
+            <code><a href="source-class-Wtf.ORM.Entity.html#183-200">loadRelation</a>( <span> string <span class="property-name">$name</span> </span> )</code>
 
             <div class="description">
                 Load realated entity by relation name.
@@ -463,7 +399,7 @@ Helper function, required for lazy load.
     <td class="name">
         <div>
             <a class="anchor pull-right" href="#_has">#</a>
-            <code><a href="source-class-Wtf.ORM.Entity.html#232-235">has</a>( <span> array <span class="property-name">$where</span> = <span class="php-keyword1">array</span> ( )</span> )</code>
+            <code><a href="source-class-Wtf.ORM.Entity.html#209-212">has</a>( <span> array <span class="property-name">$where</span> = <span class="php-keyword1">array</span> ( )</span> )</code>
 
             <div class="description">
                 Determine whether the target data existed.
@@ -495,7 +431,7 @@ Helper function, required for lazy load.
     <td class="name">
         <div>
             <a class="anchor pull-right" href="#_count">#</a>
-            <code><a href="source-class-Wtf.ORM.Entity.html#244-247">count</a>( <span> array <span class="property-name">$where</span> = <span class="php-keyword1">array</span> ( )</span> )</code>
+            <code><a href="source-class-Wtf.ORM.Entity.html#221-224">count</a>( <span> array <span class="property-name">$where</span> = <span class="php-keyword1">array</span> ( )</span> )</code>
 
             <div class="description">
                 Get count of items by $where conditions.
@@ -527,7 +463,7 @@ Helper function, required for lazy load.
     <td class="name">
         <div>
             <a class="anchor pull-right" href="#_delete">#</a>
-            <code><a href="source-class-Wtf.ORM.Entity.html#254-257">delete</a>( )</code>
+            <code><a href="source-class-Wtf.ORM.Entity.html#231-234">delete</a>( )</code>
 
             <div class="description">
                 Delete entity row from db.
@@ -559,7 +495,7 @@ Helper function, required for lazy load.
     <td class="name">
         <div>
             <a class="anchor pull-right" href="#_getTable">#</a>
-            <code><a href="source-class-Wtf.ORM.Entity.html#264">getTable</a>( )</code>
+            <code><a href="source-class-Wtf.ORM.Entity.html#241">getTable</a>( )</code>
 
             <div class="description">
                 Return entity table name.
@@ -591,7 +527,7 @@ Helper function, required for lazy load.
     <td class="name">
         <div>
             <a class="anchor pull-right" href="#_getValidators">#</a>
-            <code><a href="source-class-Wtf.ORM.Entity.html#281">getValidators</a>( )</code>
+            <code><a href="source-class-Wtf.ORM.Entity.html#258">getValidators</a>( )</code>
 
             <div class="description">
                 Get list of field validations
@@ -633,7 +569,7 @@ Example: ['save' =&gt; ['name' =&gt; v::stringType()-&gt;length(1,255)]].
     <td class="name">
         <div>
             <a class="anchor pull-right" href="#_getRelations">#</a>
-            <code><a href="source-class-Wtf.ORM.Entity.html#326">getRelations</a>( )</code>
+            <code><a href="source-class-Wtf.ORM.Entity.html#303">getRelations</a>( )</code>
 
             <div class="description">
                 Return array of entity relations
@@ -701,7 +637,9 @@ Example: ['save' =&gt; ['name' =&gt; v::stringType()-&gt;length(1,255)]].
                         <code><a href="class-Wtf.Root.html#___call">__call()</a></code>, 
                         <code><a href="class-Wtf.Root.html#___get">__get()</a></code>, 
                         <code><a href="class-Wtf.Root.html#_get">get()</a></code>, 
-                        <code><a href="class-Wtf.Root.html#_set">set()</a></code>
+                        <code><a href="class-Wtf.Root.html#_set">set()</a></code>, 
+                        <code><a href="class-Wtf.Root.html#_getData">getData()</a></code>, 
+                        <code><a href="class-Wtf.Root.html#_setData">setData()</a></code>
                 </td>
             </tr>
         </table>
